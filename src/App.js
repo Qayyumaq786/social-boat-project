@@ -38,7 +38,7 @@ const App = () => {
   }, [searchQuery,count]);
 
   const hadleCount=(e)=>{
-    console.log(e.target.value);
+    // console.log(e.target.value);
     setCount(e.target.value);
   }
   const handleSearchChange = (e) => {

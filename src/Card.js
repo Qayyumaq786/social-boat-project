@@ -5,7 +5,7 @@ const Card = ({ video, searchQuery }) => {
 
   return (
     <div className="card">
-    {console.log(video)}
+    {/* {console.log(video)} */}
       <iframe
         title={heading}
         src={video.video}
