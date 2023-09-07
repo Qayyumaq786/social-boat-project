@@ -1,38 +1,145 @@
+/* Reset some default styles */
+body,
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+  padding: 0;
+}
+body{
+  background-image: url(./img/bg1.jpg);
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  
+}
+
+/* Default styles for the entire app */
 .App {
+  font-family: Arial, sans-serif;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+/* Header styles */
+header {
+  background-color: #009395;
   color: white;
+  padding:0px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bolder;
 }
 
-.App-link {
-  color: #61dafb;
+.logo {
+  font-size: 34px;
+  margin-right: 20px;
+  text-shadow: 5px 5px 5px rgb(2, 1, 1);
+
+  /* border-radius: 50%; */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.search-bar {
+  display: inline-block;
+  width: 50%;
+  max-width: 400px;
+  padding: 15px 35px 15px 0px;
+  
+}
+
+.search-bar input {
+  width: 100%;
+  height: 25px;
+  padding: 10px;
+
+  border: none;
+  border-radius: 10px;
+  font-size: 17px;
+  /* font-weight: bold; */
+
+}
+
+.profile-image img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+/* Results styles */
+.results {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:center;
+
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.card {
+  background-color: #81dbdc;
+  width: calc(25% - 20px);
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+  box-sizing: border-box;
+  border-radius: 10px;
+ box-shadow: 5px 5px 5px rgb(196, 236, 250);
+}
+.card iframe{
+  border-radius: 10px;
+}
+
+/* Style the description */
+.card p {
+  white-space: pre-wrap; /* Allow text to wrap */
+   overflow: hidden;/* Hide overflowed text */
+  text-overflow: ellipsis; /* Show ellipsis for overflowed text */
+  max-height: 80px; /* Maximum height before text gets truncated */
+  line-height: 1.2; /* Adjust line height for better readability */
+  
+}
+
+/* Clear float to prevent layout issues */
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 1000px) {
+  /* Adjust header layout for smaller screens */
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .logo {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .search-bar {
+    width: 100%;
+    max-width: none;
+  }
+
+  .profile-image {
+    margin-top: 10px;
+  }
+
+  /* Adjust card width for smaller screens */
+  .card {
+    width: calc(50% - 25px);
+  }
+}
+
+@media screen and (max-width: 576px) {
+  /* Further adjustments for even smaller screens */
+  .card {
+    width: 100%;
   }
 }
