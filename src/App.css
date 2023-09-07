@@ -41,7 +41,7 @@ header {
 }
 
 .search-bar {
-  display: inline-block;
+  display: flex;
   width: 50%;
   max-width: 400px;
   padding: 15px 35px 15px 0px;
@@ -49,7 +49,7 @@ header {
 }
 
 .search-bar input {
-  width: 100%;
+  width: 80%;
   height: 25px;
   padding: 10px;
 
@@ -58,6 +58,12 @@ header {
   font-size: 17px;
   /* font-weight: bold; */
 
+}
+.search-bar select{
+  /* width: 15%; */
+  border-radius: 10px;
+  font-size: 10px;
+  margin-left: 5px;
 }
 
 .profile-image img {

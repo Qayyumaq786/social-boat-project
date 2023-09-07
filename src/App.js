@@ -7,6 +7,7 @@ import Results from './Results';
 const App = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [videos, setVideos] = useState([]);
+  const [count,setCount]=useState(12);
   // const [profileImageUrl] = useState('your-profile-image-url');
 
   useEffect(() => {
@@ -19,7 +20,7 @@ const App = () => {
 
       try {
         const response = await fetch(
-          `https://asia-south1-socialboat-dev.cloudfunctions.net/assignmentVideos?q=${searchQuery}&numResults=12`
+          `https://asia-south1-socialboat-dev.cloudfunctions.net/assignmentVideos?q=${searchQuery}&numResults=${count}`
         );
 
         if (!response.ok) {
@@ -34,8 +35,12 @@ const App = () => {
     };
 
     fetchVideos();
-  }, [searchQuery]);
+  }, [searchQuery,count]);
 
+  const hadleCount=(e)=>{
+    console.log(e.target.value);
+    setCount(e.target.value);
+  }
   const handleSearchChange = (e) => {
     setSearchQuery(e.target.value);
   };
@@ -46,7 +51,8 @@ const App = () => {
       <Header
         searchQuery={searchQuery}
         handleSearchChange={handleSearchChange}
-        // profileImageUrl={profileImageUrl}
+        hadleCount={hadleCount}
+        
       />
       <Results videos={videos} searchQuery={searchQuery} />
     </div>
