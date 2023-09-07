@@ -10,12 +10,14 @@ const Card = ({ video, searchQuery }) => {
         title={heading}
         src={video.video}
         width="95%"
-        height="200"
+        height="250px"
        
         frameBorder="0"
         allowFullScreen
       ></iframe>
+      <hr  />
       <h3>Title:- {heading}</h3>
+      <hr />
       <p>{text}</p>
       <p>Tags: {tags.join(', ')}</p>
       <p>Search Query: {searchQuery}</p>
